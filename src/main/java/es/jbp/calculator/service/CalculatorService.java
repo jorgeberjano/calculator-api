@@ -2,33 +2,21 @@ package es.jbp.calculator.service;
 
 import es.jbp.calculator.entities.CalculationOperation;
 import es.jbp.calculator.entities.CalculationResult;
-import es.jbp.calculator.entities.OperationType;
-import lombok.RequiredArgsConstructor;
-import org.springframework.stereotype.Service;
 import reactor.core.publisher.Mono;
 
-import java.math.BigDecimal;
-import java.util.List;
+/**
+ * Contrato para el servicio de calculadora
+ */
+public interface CalculatorService {
 
-@Service
-@RequiredArgsConstructor
-public class CalculatorService {
+    /**
+     * Calcula una operación aritmética.
+     * Se implementa de forma reactiva para permitir cálculos en paralelo cuando
+     * las operaciones sean mós complejas. Por ejemplo si es una suma de un numero elevado de operandos se podría
+     * dividir en varias partes y sumar de manera concurrente cada una de ellas.
+     * @param calculationOperation operación a calcular
+     * @return El resultado del cálculo
+     */
+    Mono<CalculationResult> calculate(CalculationOperation calculationOperation);
 
-    // All operation services injection
-    private final List<OperationService> operationServices;
-
-    public Mono<CalculationResult> calculate(CalculationOperation calculationOperation) {
-        return Mono.just(CalculationResult.builder()
-                .resultValue(calculateResult(calculationOperation.getOperationType(), calculationOperation.getOperands()))
-                .build());
-    }
-
-    private BigDecimal calculateResult(OperationType operationType, List<BigDecimal> operands) {
-
-        return operationServices.stream()
-                .filter(s -> s.getOperationType() == operationType)
-                .findFirst()
-                .map(s -> s.calculate(operands))
-                .orElse(BigDecimal.ZERO);
-    }
 }
