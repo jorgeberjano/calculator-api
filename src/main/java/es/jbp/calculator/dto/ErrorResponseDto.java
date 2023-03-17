@@ -22,7 +22,4 @@ public class ErrorResponseDto {
 
     @Schema(description="Descriptive error message", example = "Missing attribute ...")
     private String message;
-
-    @Schema(description="Unique request identifier for issue tracking", example = "9dbece61-2c25-4394-80fb-02a67d8c97dd")
-    private String requestId;
 }
