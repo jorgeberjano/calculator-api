@@ -2,7 +2,6 @@ package es.jbp.calculator.rest;
 
 import es.jbp.calculator.dto.CalculationRequestDto;
 import es.jbp.calculator.dto.CalculationResponseDto;
-import es.jbp.calculator.entities.CalculationResult;
 import es.jbp.calculator.mapper.CalculatorMapper;
 import es.jbp.calculator.service.CalculatorService;
 import lombok.RequiredArgsConstructor;
@@ -27,12 +26,12 @@ public class CalculatorResource implements CalculatorResourceSwagger {
         var calculationOperation = calculatorMapper.mapToCalculationOperation(requestDto);
 
         return calculatorService.calculate(calculationOperation)
-                .map(this::process);
+                .map(calculatorMapper::mapToCalculationResponseDto)
+                .map(responseDto -> {
+                    responseDto.setRequestId(requestDto.getRequestId());
+                    return responseDto;
+                });
+
     }
 
-    private CalculationResponseDto process(CalculationResult calculationResult) {
-        var r = calculatorMapper.mapToCalculationResponseDto(calculationResult);
-
-        return r;
-    }
 }

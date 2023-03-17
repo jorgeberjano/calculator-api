@@ -1,6 +1,6 @@
 package es.jbp.calculator.mapper;
 
-import es.jbp.calculator.CalculatorException;
+import es.jbp.calculator.exception.CalculatorException;
 import es.jbp.calculator.dto.CalculationRequestDto;
 import es.jbp.calculator.dto.CalculationResponseDto;
 import es.jbp.calculator.entities.CalculationOperation;

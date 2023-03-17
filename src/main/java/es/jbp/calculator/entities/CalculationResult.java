@@ -13,4 +13,9 @@ import java.math.BigDecimal;
 public class CalculationResult {
 
     private BigDecimal resultValue;
+
+    @Override
+    public String toString() {
+        return "El resultado de la operación es: " + resultValue;
+    }
 }

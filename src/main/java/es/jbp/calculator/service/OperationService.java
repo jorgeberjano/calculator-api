@@ -5,9 +5,21 @@ import es.jbp.calculator.entities.OperationType;
 import java.math.BigDecimal;
 import java.util.List;
 
+/**
+ * Contrato para los servicios de operaciones
+ */
 public interface OperationService {
 
+    /**
+     * Devuelve el tipo de operación que implementa
+     * @return
+     */
     OperationType getOperationType();
 
+    /**
+     * Realiza el cálculo de la operación
+     * @param operands Operandos del cálculo
+     * @return Resultado del cálculo
+     */
     BigDecimal calculate(List<BigDecimal> operands);
 }
