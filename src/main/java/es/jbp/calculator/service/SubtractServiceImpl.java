@@ -7,10 +7,10 @@ import java.math.BigDecimal;
 import java.util.List;
 
 /**
- * Subtract operation service
+ * Implementación del servicio de la operación resta
  */
 @Service
-public class SubtractService implements OperationService {
+public class SubtractServiceImpl implements OperationService {
 
     @Override
     public OperationType getOperationType() {

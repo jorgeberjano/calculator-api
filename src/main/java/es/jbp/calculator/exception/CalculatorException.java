@@ -1,4 +1,4 @@
-package es.jbp.calculator;
+package es.jbp.calculator.exception;
 
 public class CalculatorException extends RuntimeException {
     public CalculatorException(String message) {

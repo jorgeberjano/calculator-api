@@ -7,10 +7,10 @@ import java.math.BigDecimal;
 import java.util.List;
 
 /**
- * Add operation service
+ * Implementación del servicio de la operación suma
  */
 @Service
-public class AddService implements OperationService {
+public class AddServiceImpl implements OperationService {
 
     @Override
     public OperationType getOperationType() {
