@@ -10,5 +10,7 @@ import lombok.*;
 @EqualsAndHashCode
 public class CalculationResponseDto {
 
+    private String requestId;
+
     private String resultValue;
 }

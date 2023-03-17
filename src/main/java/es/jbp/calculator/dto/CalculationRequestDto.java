@@ -2,8 +2,6 @@ package es.jbp.calculator.dto;
 
 import lombok.*;
 
-import java.util.List;
-
 @Getter
 @Setter
 @Builder
@@ -11,6 +9,8 @@ import java.util.List;
 @AllArgsConstructor
 @EqualsAndHashCode
 public class CalculationRequestDto {
+
+    private String requestId;
 
     private String operationType;
 
