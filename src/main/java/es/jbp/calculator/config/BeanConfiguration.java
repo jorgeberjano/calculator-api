@@ -4,6 +4,9 @@ import io.corp.calculator.TracerImpl;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+/**
+ * Configuración de beans de spring que no están anotados como componentes
+ */
 @Configuration
 public class BeanConfiguration {
 

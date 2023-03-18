@@ -4,6 +4,9 @@ import lombok.*;
 
 import java.math.BigDecimal;
 
+/**
+ * Entidad que define el resultado de un cálculo
+ */
 @Getter
 @Setter
 @Builder

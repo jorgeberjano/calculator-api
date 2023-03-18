@@ -14,6 +14,9 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 
 import java.util.Optional;
 
+/**
+ * Advice para tratamiento de excepciones y su conversión a respuestas de error
+ */
 @RequiredArgsConstructor
 @ControllerAdvice
 @Slf4j

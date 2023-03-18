@@ -15,6 +15,9 @@ import reactor.core.publisher.Mono;
 
 import javax.validation.Valid;
 
+/**
+ * Contrato del recurso calculador que define la documentación swagger open-api
+ */
 public interface CalculatorResourceSwagger {
 
     @Operation(summary = "Calculate an arithmetic operation",

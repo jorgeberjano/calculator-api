@@ -3,6 +3,9 @@ package es.jbp.calculator.dto;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.*;
 
+/**
+ * DTO de la petición de la operación de cálculo
+ */
 @Getter
 @Setter
 @Builder

@@ -13,9 +13,15 @@ import org.mapstruct.MappingTarget;
 import java.math.BigDecimal;
 import java.util.List;
 
+/**
+ * Mapper para conversión de objetos Dto y entidades de dominio.
+ */
 @Mapper(componentModel = "spring")
 public interface CalculatorMapper {
 
+    /**
+     * Mapea un Dto de petición de cálculo en una operación de calculo
+     */
     @Mapping(ignore = true, target = "operands")
     CalculationOperation mapToCalculationOperation(CalculationRequestDto requestDto);
 
@@ -27,6 +33,9 @@ public interface CalculatorMapper {
                 mapToBigDecimal(requestDto.getOperand2())));
     }
 
+    /**
+     * Convierte una cadena en un big decimal si es posible, de lo contrario lanza una excepción de cálculo
+     */
     default BigDecimal mapToBigDecimal(String value) {
         try {
             return new BigDecimal(value);
@@ -35,6 +44,9 @@ public interface CalculatorMapper {
         }
     }
 
+    /**
+     * Mapea un resultado de una operacion de calculo en el DTO de respuesta
+     */
     CalculationResponseDto mapToCalculationResponseDto(CalculationResult calculationResult);
 }
 
