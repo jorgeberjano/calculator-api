@@ -3,7 +3,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>es.jbb</groupId>
+    <groupId>es.jbp</groupId>
     <artifactId>calculator-api</artifactId>
     <version>1.0.0-SNAPSHOT</version>
 
@@ -84,10 +84,8 @@
         <!-- tracer -->
         <dependency>
             <groupId>io.corp</groupId>
-            <artifactId>io.corp.calculator</artifactId>
+            <artifactId>calculator</artifactId>
             <version>1.0.0</version>
-            <scope>system</scope>
-            <systemPath>${basedir}/lib/tracer-1.0.0.jar</systemPath>
         </dependency>
 
         <!-- Testing -->
