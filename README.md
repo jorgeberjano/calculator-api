@@ -104,7 +104,7 @@ para visualizar la documentación Open-Api Swagger de la API.
 
 # Consideraciones
 
-La api es un ejemplo de api que permite extender su funcionalidad fácilmente, simplemente creando nuevos servicios o se implementan nuevas operaciones de calculo con diferente número de parámetros.
+La api es un ejemplo de api que permite extender su funcionalidad fácilmente, simplemente creando nuevos servicios que implementen nuevas operaciones de calculo con diferente número de parámetros.
 
 Se ha implementado de forma reactiva para permitir que, al implementar operaciones mas complejas, se puedan paralelizar los cálculos de forma simple.
 
