@@ -1,6 +1,7 @@
 package es.jbp.calculator.service;
 
 import es.jbp.calculator.entities.OperationType;
+import reactor.core.publisher.Mono;
 
 import java.math.BigDecimal;
 import java.util.List;
@@ -21,5 +22,5 @@ public interface OperationService {
      * @param operands Operandos del cálculo
      * @return Resultado del cálculo
      */
-    BigDecimal calculate(List<BigDecimal> operands);
+    Mono<BigDecimal> calculate(List<BigDecimal> operands);
 }
